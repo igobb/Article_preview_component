@@ -1,0 +1,229 @@
+:root {
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+    --very-dark-graylish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --graylish-blue: hsl(212, 23%, 69%);
+    --light-graylish-blue: hsl(210, 46%, 95%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--light-graylish-blue)
+}
+
+.container {
+    width: 60%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--graylish-blue);
+}
+
+.img__container {
+    background-image: url(../images/drawers.jpg);
+    background-size: 125%;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+    display: grid;
+}
+
+.text__container {
+    
+    padding: 3rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title__text {
+    font-size: 1.6rem;
+    color: var(--very-dark-graylish-blue);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.paragraph_text {
+    color: var(--very-dark-graylish-blue) ;
+    font-weight: 500;
+    line-height: 1.5rem;
+    opacity: 0.9;
+}
+
+.user_text__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_text__container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: var(--very-dark-graylish-blue);
+    margin-bottom: 0.4rem;
+}
+
+p {
+    color: var(--graylish-blue)
+}
+.user_data h2, p{
+    font-size: 1rem;
+}
+
+.share_btn {
+    position: relative;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.share_btn img {
+    margin: auto;
+    width: 20px;
+    height: 15px;
+}
+
+.social_container > .left__social_container {
+    background-color: var(--very-dark-graylish-blue);
+    width: 220px;
+    height: 50px;
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: absolute;
+    top: -75px;
+    left: -95px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 15px solid var(--very-dark-graylish-blue);
+    position: absolute;
+    top: 50px;
+}
+
+.social_container img {
+    height: 20px;
+    width: 20px;
+    margin: 0 0.4rem;
+}
+
+.social_container a:hover {
+    transform: scale(1.5);
+}
+
+.share {
+    letter-spacing: 0.3rem;
+}
+
+.active .social_container > .left__social_container {
+    opacity: 1;
+    visibility: visible;
+}
+
+.share_btn.active {
+    background-color: var(--very-dark-graylish-blue);
+}
+
+.active .arrow {
+    color: aqua;
+}
+
+.phone_img {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        width: 350px;
+        grid-template-columns: 350px;
+        grid-template-rows: 200px 1fr;
+        height: 550px;
+    }
+
+    .img__container {
+        border-radius: 10px 10px 0 0;
+        background-size: 100%;
+    }
+
+    .text__container {
+        padding: 3rem 2.5rem 1.5rem;
+    }
+
+    .title__text {
+        font-size: 1.4rem;
+    }
+
+    .paragraph_text {
+        font-size: 1.15rem;
+        line-height: 1.8rem;
+    }
+
+    .social_container > .left__social_container {
+        background-color: var(--very-dark-graylish-blue);
+        width: 350px;
+        height: 70px;
+        padding: 1rem 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 0 10px 10px;
+        position: absolute;
+        z-index: 1;
+        left: -287px;
+        top: -10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease-in-out;
+        
+    }
+
+    .triangle-down {
+        display: none;
+    }
+
+    .phone_img {
+        display: block;
+        background-color: var(--light-graylish-blue);
+        margin-left: 100px !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+  }
+
